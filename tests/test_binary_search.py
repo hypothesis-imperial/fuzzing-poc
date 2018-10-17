@@ -28,7 +28,7 @@ should change (or not) in response to movements in the underlying data.
 from __future__ import division, print_function, absolute_import
 
 import hypothesis.strategies as st
-from hypothesis import given, settings
+from hypothesis import given
 
 
 def binary_search(ls, v):
@@ -97,7 +97,6 @@ SortedLists = st.lists(Values).map(sorted)
 # low probability, so we are much better off post-processing values into the
 # form we want than filtering them out.
 
-@settings(max_examples=1000000)
 @given(ls=SortedLists, v=Values)
 def test_insert_is_sorted(ls, v):
     """We test the first invariant: binary_search should return an index such
