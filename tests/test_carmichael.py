@@ -1,4 +1,7 @@
 import math
+import flask
+import numpy
+import pandas
 import hypothesis.strategies as st
 from hypothesis import given, settings
 
@@ -6,35 +9,44 @@ from hypothesis import given, settings
 # Checks whether a number is definitely prime
 def is_prime(n):
     # 2 and 3 are prime numbers
+
     if n == 2 or n == 3:
         return True
     # Filter multiples of 2 or 3
+
     if n % 2 == 0 or n % 3 == 0:
         return False
     # Ignore negative numbers and large numbers
+
     if n < 2 or n > 10000:
         return False
     r = int(n ** 0.5)
     # Prime numbers greater than 4 can only be of the form 6n - 1 or 6n + 2
     f = 5
+
     while f <= r:
         if n % f == 0:
             return False
+
         if n % (f + 2) == 0:
             return False
         f += 6
+
     return True
 
 
 # Checks whether a number is probably prime
 def is_probably_prime(n):
     # Ignore negative numbers and large numbers
+
     if n < 2 or n > 10000:
         return False
     # Check all congruence classes of a that could be coprime to n
+
     for a in range(n):
         if math.gcd(n, a) == 1 and pow(a, n - 1, n) != 1:
             return False
+
     return True
 
 
