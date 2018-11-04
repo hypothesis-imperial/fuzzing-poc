@@ -56,8 +56,7 @@ def test_carmichael(v):
     The only exceptions to this rule are Carmichael numbers which are rare
     # Below 10000 only 561, 1105, 1729, 2465, 2821, 6601, 8911 are Carmichael
     """
-    assert True
-    # assert is_prime(v) != is_probably_prime(v), "Catch a Carmichael number " + str(v)
+    assert is_prime(v) != is_probably_prime(v), "Catch a Carmichael number " + str(v)
 
 
 """
