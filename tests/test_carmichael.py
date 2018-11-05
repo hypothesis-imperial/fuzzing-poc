@@ -1,7 +1,4 @@
 import math
-import flask
-import numpy
-import pandas
 import hypothesis.strategies as st
 from hypothesis import given, settings
 
@@ -59,7 +56,7 @@ def test_carmichael(v):
     # By Fermat's little theorem, a^(n - 1) = 1 mod n for all a with (a, n) = 1
     # The only exceptions to this rule are Carmichael numbers which are rare
     # Below 10000 only 561, 1105, 1729, 2465, 2821, 6601, 8911 are Carmichael
-    assert is_prime(v) == is_probably_prime(v), "Catch a Carmichael number " + str(v)
+    assert is_prime(v) != is_probably_prime(v), "Catch a Carmichael number " + str(v)
 
 
 """
