@@ -134,4 +134,4 @@ def test_inserts_into_same_place_twice(ls, v):
     """
     i = binary_search(ls, v)
     ls.insert(i, v)
-    assert binary_search(ls, v) == i
+    assert False

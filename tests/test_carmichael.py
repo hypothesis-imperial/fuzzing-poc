@@ -1,6 +1,6 @@
 import math
 import hypothesis.strategies as st
-from hypothesis import given, settings
+from hypothesis import given, settings, unlimited
 
 
 # Checks whether a number is definitely prime
@@ -49,7 +49,7 @@ def is_probably_prime(n):
 Values = st.integers()
 
 
-@settings(max_examples=100)
+@settings(max_examples=100, timeout=unlimited)
 @given(Values)
 def test_carmichael(v):
     """By Fermat's little theorem, a^(n - 1) = 1 mod n for all a with (a, n) = 1
