@@ -50,7 +50,6 @@ def is_probably_prime(n):
 Values = st.integers()
 
 
-@settings(max_examples=10000)
 @given(Values)
 def test_carmichael(v):
     # By Fermat's little theorem, a^(n - 1) = 1 mod n for all a with (a, n) = 1
