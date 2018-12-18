@@ -1,3 +1,0 @@
-# Random packages to test pip install
-git+git://github.com/hypothesis-imperial/hypothesis.git#subdirectory=hypothesis-python
-pytest
