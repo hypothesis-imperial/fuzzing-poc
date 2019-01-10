@@ -1,11 +1,12 @@
 from hypothesis import given
 from hypothesis.strategies import floats
 from sender_receiver import Sender, Receiver
+DELAY = 1e-10
 
 
-@given(floats(min_value=0, max_value=10.00000000000001))
-def test_wait(wait):
+@given(floats(min_value=0, max_value=10))
+def test_confirmaiton_time(wait):
     x = Sender()
-    y = Receiver(wait, 0)
+    y = Receiver(wait + DELAY, 0)
     x.send(y, "message")
     assert x.check() < 10
