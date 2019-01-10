@@ -15,7 +15,12 @@ class Receiver:
         self.id = id
 
     def receive(self, sender, message):
+        self.message = message
+        #self.message = str(self.id) + str(self.message)
         sender.confirm(self.wait)
+
+    def get_message(self):
+        return self.message
 
     def get_id(self):
         assert self.id > 0
