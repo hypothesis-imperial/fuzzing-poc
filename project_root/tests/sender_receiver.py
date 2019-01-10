@@ -18,6 +18,7 @@ class Receiver:
         sender.confirm(self.wait)
 
     def get_id(self):
+        assert self.id > 0
         return self.id
 
     def get_wait(self):
