@@ -6,7 +6,7 @@ msgs = text(min_size=1)
 
 
 @given(msgs)
-def test_object(msg):
+def test_message_format(msg):
     x = Sender()
     y = Receiver(5, 1)
     x.send(y, msg)
