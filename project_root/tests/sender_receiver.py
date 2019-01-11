@@ -17,7 +17,7 @@ class Receiver:
     # The message should consist of a sender id and the message
     def receive(self, sender, message):
         self.message = message
-        self.message = str(self.id) + str(self.message)
+        # self.message = str(self.id) + str(self.message)
         sender.confirm(self.wait)
 
     def get_message(self):
